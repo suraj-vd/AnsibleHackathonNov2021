@@ -7,8 +7,5 @@
   tasks:
   - name: install nginx wget
     yum: 
-      name: "{{item}}"
+      name: wget,nginx 
       state: latest
-    with_items:
-      - wget
-      - nginx
