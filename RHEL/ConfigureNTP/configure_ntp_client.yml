@@ -2,6 +2,8 @@
 # This playbook configures NTP clients.
 
 - hosts: node2
+  become: true
+  gather_facts: no
   tasks:
   - name: install chrony
     yum: 
