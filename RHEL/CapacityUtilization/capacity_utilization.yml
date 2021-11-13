@@ -12,9 +12,9 @@
     yum:
       name: sos
       state: latest
-    when: memory_status.stdout|int > 10
+    when: memory_status.stdout|int > 70
   - name: Check memory utilization
     shell: sosreport --all-logs --case-id 1234 --tmp-dir /opt --batch 
-    when: memory_status.stdout|int > 10
+    when: memory_status.stdout|int > 70
     
 
