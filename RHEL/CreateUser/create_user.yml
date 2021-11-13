@@ -1,0 +1,16 @@
+---
+# This playbook creates user and assigns permission to a particular file.
+
+- hosts: node3
+  become: true
+  gather_facts: no
+  tasks:
+  - name: install nginx wget
+    user: 
+      name: ansihktn
+      state: present
+  - name: create a file and assign permission to user
+    file: /tmp/ansi_file
+      state: present
+      owner: ansihktn
+      mode: 0755

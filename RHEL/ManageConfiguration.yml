@@ -2,4 +2,5 @@
 - import_playbook: ConfigureNTP/configure_ntp_server.yml
 - import_playbook: ConfigureNTP/configure_ntp_client.yml
 - import_playbook: nginx_wget/install_nginx_wget.yml
+- import_playbook: CreateUser/create_user.yml
 
