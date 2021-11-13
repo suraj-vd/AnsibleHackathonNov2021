@@ -11,6 +11,5 @@
       state: present
   - name: create a file and assign permission to user
     file: /tmp/ansi_file
-      state: present
       owner: ansihktn
       mode: 0755
