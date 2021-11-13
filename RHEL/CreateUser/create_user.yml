@@ -10,6 +10,7 @@
       name: ansihktn
       state: present
   - name: create a file and assign permission to user
-    file: /tmp/ansi_file
+    file: 
+      path: /tmp/ansi_file
       owner: ansihktn
       mode: 0755

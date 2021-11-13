@@ -1,11 +1,14 @@
 ---
-# This playbook install wget and nginx.
+# This playbook install Tomcat.
 
-- hosts: node3
+- hosts: node1
   become: true
   gather_facts: no
   tasks:
-  - name: install nginx wget
+  - name: install openjdk
     yum: 
-      name: wget,nginx 
+      name: java-11-openjdk,java-11-openjdk-devel
       state: latest
+  - name: install tomcat
+    yum:
+      
