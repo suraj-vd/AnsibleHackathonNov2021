@@ -1,0 +1,22 @@
+---
+# This playbook checks memory utilization and takes action based on that.
+
+- hosts: node2
+  become: true
+  gather_facts: no
+  var:
+    mem_threshold: 10
+  tasks:
+  - name: Check memory utilization
+    shell: free -t | awk 'FNR == 2 {printf("%.2f"),$3/$2*100}'
+    register: memory_status
+  - name: If memory is out of limit install sos
+    yum:
+      name: sos
+      state: latest
+    when: memory_status.stdout|int > "{{mem_threshold}}"|int
+  - name: Check memory utilization
+    shell: sosreport --all-logs --case-id 1234 --tmp-dir /opt --batch 
+    when: memory_status.stdout|int > "{{mem_threshold}}"|int
+    
+
