@@ -1,3 +1,0 @@
----
-- import_playbook: configure_ntp_server.yml
-- import_playbook: configure_ntp_client.yml
