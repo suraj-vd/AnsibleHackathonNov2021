@@ -26,5 +26,5 @@
   - name: Check list of NTP clients
     shell: chronyc sources
     register: CHRONYC_SOURCES
-  - debug: msg="{{CHRONYC_SOURCES}}"
+  - debug: msg="{{CHRONYC_SOURCES.stdout_lines}}"
 

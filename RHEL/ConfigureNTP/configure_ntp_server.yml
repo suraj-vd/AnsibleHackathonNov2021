@@ -26,5 +26,5 @@
   - name: Check list of NTP clients
     shell: chronyc clients
     register: CHRONYC_CLIENTS
-  - debug: msg="{{CHRONYC_CLIENTS}}"
+  - debug: msg="{{CHRONYC_CLIENTS.stdout_lines}}"
 
