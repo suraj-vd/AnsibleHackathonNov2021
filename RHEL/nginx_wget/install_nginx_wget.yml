@@ -1,0 +1,14 @@
+---
+# This playbook install wget and nginx.
+
+- hosts: node3
+  become: true
+  gather_facts: no
+  tasks:
+  - name: install nginx wget
+    yum: 
+      name: "{{item}}"
+      state: latest
+    with_items:
+      - wget
+      - nginx
