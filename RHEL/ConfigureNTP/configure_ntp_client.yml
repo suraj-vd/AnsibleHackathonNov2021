@@ -1,7 +1,7 @@
 ---
 # This playbook configures NTP clients.
 
-- hosts: "{{ntp_client_ip}}"
+- hosts: node2
   tasks:
   - name: install chrony
     yum: 
@@ -15,7 +15,7 @@
   - name: Add network or subnet details
     lineinfile:
       path: vi /etc/chrony.conf
-      line: server "{{ntp_server_ip}}"
+      line: server 3.126.248.59
   - name: Enable and start chronyd
     service:
       name: chronyd
