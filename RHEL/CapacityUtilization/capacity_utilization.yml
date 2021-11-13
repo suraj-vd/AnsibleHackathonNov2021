@@ -4,7 +4,7 @@
 - hosts: node2
   become: true
   gather_facts: no
-  var:
+  vars:
     mem_threshold: 10
   tasks:
   - name: Check memory utilization
