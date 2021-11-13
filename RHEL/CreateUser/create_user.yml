@@ -12,5 +12,6 @@
   - name: create a file and assign permission to user
     file: 
       path: /tmp/ansi_file
+      state: touch
       owner: ansihktn
       mode: 0755
