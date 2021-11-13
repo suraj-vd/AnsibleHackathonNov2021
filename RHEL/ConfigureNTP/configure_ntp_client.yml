@@ -16,7 +16,7 @@
       state: started
   - name: Add network or subnet details
     lineinfile:
-      path: vi /etc/chrony.conf
+      path: /etc/chrony.conf
       line: server 3.126.248.59
   - name: Enable and start chronyd
     service:
