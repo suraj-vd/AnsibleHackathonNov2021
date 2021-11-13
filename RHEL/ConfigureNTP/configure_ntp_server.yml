@@ -13,7 +13,7 @@
     service:
       name: chronyd
       enabled: yes
-      status: started
+      state: started
   - name: Add network or subnet details
     lineinfile:
       path: vi /etc/chrony.conf
@@ -22,7 +22,7 @@
     service:
       name: chronyd
       enabled: yes
-      status: restarted
+      state: restarted
   - name: Check list of NTP clients
     shell: chronyc clients
     register: CHRONYC_CLIENTS
